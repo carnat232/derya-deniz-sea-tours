@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, MapPin, Users, Camera, MessageCircle } from "lucide-react";
+import { Clock, MapPin, Users, Camera, MessageCircle, Shield, Anchor, Waves, PartyPopper, Utensils } from "lucide-react";
 import { Link } from "react-router-dom";
 import boatAtSea from "@/assets/boat-at-sea.jpg";
 import boatHarbour from "@/assets/boat-harbour.jpg";
 import boatDeck from "@/assets/boat-deck.jpg";
 import boatInterior from "@/assets/boat-interior.jpg";
+import boatDeckSun from "@/assets/boat-deck-sun.jpg";
+import boatDeckInterior from "@/assets/boat-deck-interior.jpg";
+import logo from "@/assets/logo.png";
 
 const Home = () => {
   const features = [
@@ -38,6 +41,68 @@ const Home = () => {
     { src: boatInterior, alt: "Boat interior seating" }
   ];
 
+  const aboutHighlights = [
+    {
+      icon: Shield,
+      title: "Safe & Comfortable Vessel",
+      description: "Well-maintained and equipped with all safety features"
+    },
+    {
+      icon: Users,
+      title: "Experienced & Friendly Captain",
+      description: "Professional crew for a memorable experience"
+    },
+    {
+      icon: Clock,
+      title: "Flexible Schedules",
+      description: "Various departure times to suit your plans"
+    },
+    {
+      icon: Anchor,
+      title: "Custom Private Tours",
+      description: "Personalized routes and exclusive experiences"
+    }
+  ];
+
+  const services = [
+    {
+      title: "Daily Boat Trip",
+      image: boatAtSea,
+      duration: "4-6 hours",
+      icon: Waves,
+      features: [
+        "Full-day or half-day trips",
+        "Swimming stops along the coast",
+        "Includes drinks & light snacks"
+      ],
+      description: "Enjoy a relaxing day on the water with swimming stops, sunbathing, and breathtaking coastal views."
+    },
+    {
+      title: "Sunset Cruise",
+      image: boatDeckSun,
+      duration: "Evening departures",
+      icon: Clock,
+      features: [
+        "Perfect timing for golden hour",
+        "Romantic atmosphere",
+        "Ideal for couples"
+      ],
+      description: "Sail into the golden hour and watch the sun dip into the sea – a perfect moment for couples or photography lovers."
+    },
+    {
+      title: "Private Boat Trip",
+      image: boatDeckInterior,
+      duration: "Customizable",
+      icon: PartyPopper,
+      features: [
+        "Charter the entire boat",
+        "Perfect for birthdays & parties",
+        "Customize your route"
+      ],
+      description: "Charter Derya Deniz 1 for birthdays, parties, or family gatherings. Customize your route and enjoy exclusivity."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -50,6 +115,11 @@ const Home = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
+          <img 
+            src={logo} 
+            alt="Derya Deniz 1 Boat Tours Logo" 
+            className="h-32 md:h-40 w-auto mx-auto mb-8 animate-fade-in drop-shadow-2xl"
+          />
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             Discover Cyprus from the Sea
           </h1>
@@ -99,6 +169,97 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              About DERYA DENIZ 1
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Derya Deniz 1 offers memorable boat tours and private trips across the stunning Northern Cyprus coast. Our mission is to give every guest a relaxing, fun, and scenic experience at sea.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+            {aboutHighlights.map((highlight, index) => (
+              <Card key={index} className="border-2 hover:border-secondary transition-all duration-300 hover:shadow-xl">
+                <CardContent className="p-6 text-center">
+                  <highlight.icon className="h-12 w-12 mx-auto mb-4 text-secondary" />
+                  <h3 className="font-semibold mb-2 text-foreground">{highlight.title}</h3>
+                  <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/about">
+              <Button variant="default" size="lg">
+                Learn More About Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Our Boat Trips & Experiences
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Choose the perfect adventure for your day at sea
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+            {services.map((service, index) => (
+              <Card key={index} className="overflow-hidden border-2 hover:border-secondary transition-all duration-300 hover:shadow-2xl group">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <service.icon className="h-10 w-10 mb-2" />
+                    <h3 className="text-2xl font-bold">{service.title}</h3>
+                  </div>
+                </div>
+                
+                <CardContent className="p-6 space-y-4">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Clock className="h-4 w-4" />
+                    <span className="text-sm font-medium">{service.duration}</span>
+                  </div>
+                  <p className="text-muted-foreground">{service.description}</p>
+                  <div className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <div className="h-1.5 w-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                        <span className="text-sm text-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/services">
+              <Button variant="secondary" size="lg">
+                View All Services
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Preview */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -129,7 +290,7 @@ const Home = () => {
 
           <div className="text-center">
             <Link to="/gallery">
-              <Button variant="secondary" size="lg">
+              <Button variant="default" size="lg">
                 View Full Gallery
               </Button>
             </Link>

@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,6 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
+            <img 
+              src={logo} 
+              alt="Derya Deniz 1 Boat Tours Logo" 
+              className="h-20 w-auto mb-4 brightness-0 invert"
+            />
             <h3 className="text-xl font-bold mb-4">DERYA DENIZ 1</h3>
             <p className="text-sm opacity-90 mb-4">
               Experience unforgettable boat tours along the beautiful Northern Cyprus coast.
