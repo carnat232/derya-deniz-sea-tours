@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { HeroSlideshow } from '@/components/HeroSlideshow';
 import { ChatWidget } from '@/components/ChatWidget';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import CustomerReviews from '@/components/CustomerReviews';
+import TrustBadges from '@/components/TrustBadges';
 import { Link } from 'react-router-dom';
 import boatAtSea from '@/assets/boat-at-sea.jpg';
 import boatDeckSun from '@/assets/boat-deck-sun.jpg';
@@ -109,6 +111,9 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Slideshow */}
       <HeroSlideshow />
+
+      {/* Trust Badges */}
+      <TrustBadges />
 
       {/* Quick Info Section */}
       <section className="py-20 bg-background">
@@ -217,6 +222,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Customer Reviews */}
+      <CustomerReviews />
 
       {/* Gallery Preview */}
       <section className="py-20 bg-muted/30">

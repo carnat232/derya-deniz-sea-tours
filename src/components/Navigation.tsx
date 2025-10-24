@@ -19,7 +19,7 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-md transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
@@ -36,7 +36,7 @@ const Navigation = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-secondary relative
+                className={`text-sm font-medium transition-all duration-300 hover:text-secondary hover:scale-105 relative
                   ${isActive(link.to) ? "text-primary" : "text-foreground"}
                   ${isActive(link.to) ? "after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-primary" : ""}
                 `}
@@ -44,8 +44,13 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
-            <a href="tel:+905338408119">
+            <a href="https://wa.me/905338408119" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="default" className="gap-2">
+                Book Now
+              </Button>
+            </a>
+            <a href="tel:+905338408119">
+              <Button variant="outline" size="default" className="gap-2">
                 <Phone className="h-4 w-4" />
                 Call Now
               </Button>
@@ -78,8 +83,13 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
-              <a href="tel:+905338408119" className="px-4">
+              <a href="https://wa.me/905338408119" target="_blank" rel="noopener noreferrer" className="px-4">
                 <Button variant="hero" size="default" className="w-full gap-2">
+                  Book Now
+                </Button>
+              </a>
+              <a href="tel:+905338408119" className="px-4">
+                <Button variant="outline" size="default" className="w-full gap-2">
                   <Phone className="h-4 w-4" />
                   Call Now
                 </Button>

@@ -76,6 +76,36 @@ const Contact = () => {
       {/* Contact Content */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
+          {/* Google Map Embed */}
+          <div className="mb-12 max-w-6xl mx-auto">
+            <div className="aspect-video rounded-lg overflow-hidden shadow-lg border-2 border-border">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.6!2d33.32!3d35.34!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDIwJzI2LjQiTiAzM8KwMTknMTIuMCJF!5e0!3m2!1sen!2s!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Kyrenia Harbour, Northern Cyprus location"
+              />
+            </div>
+            <div className="mt-6 text-center space-y-2">
+              <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                <MapPin className="h-5 w-5 text-secondary" />
+                <p className="text-lg font-medium">Kyrenia Harbour, Northern Cyprus</p>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                <Phone className="h-5 w-5 text-secondary" />
+                <a href="tel:+905338408119" className="hover:text-secondary transition-colors">+90 533 840 81 19</a>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                <Mail className="h-5 w-5 text-secondary" />
+                <a href="mailto:Mustykoc1986@gmail.com" className="hover:text-secondary transition-colors">Mustykoc1986@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Info */}
             <div className="space-y-8">
