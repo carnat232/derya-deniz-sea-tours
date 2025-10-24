@@ -47,11 +47,11 @@ export const HeroSlideshow = () => {
       ))}
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <div className="mb-8 animate-fade-in">
+        <div className="mb-8 animate-fade-in backdrop-blur-sm bg-white/10 rounded-3xl p-6 md:p-8 border border-white/20 shadow-[0_0_60px_rgba(255,255,255,0.3)]">
           <img 
             src={logo} 
             alt="Derya Deniz 1" 
-            className="h-32 md:h-40 lg:h-48 w-auto drop-shadow-2xl animate-scale-in"
+            className="h-40 md:h-56 lg:h-72 w-auto drop-shadow-[0_0_30px_rgba(255,255,255,0.8)] animate-scale-in brightness-110 contrast-125"
           />
         </div>
         
